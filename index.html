@@ -1309,6 +1309,9 @@
         <input type="password" id="passwordInput" class="login-input" placeholder="Contraseña de acceso" onkeydown="if(event.key === 'Enter') attemptLogin()">
         <div id="loginErrorMsg" class="login-error"></div>
         <button class="btn-login" onclick="attemptLogin()">Desbloquear Guía</button>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.4; text-align: center;">
+          💡 <strong>Nota:</strong> Si no te permite entrar al copiar y pegar, te recomendamos escribir la contraseña manualmente (carácter por carácter) para evitar espacios adicionales invisibles.
+        </p>
       </div>
       
       <div class="login-footer">
@@ -2941,7 +2944,7 @@
       const passwordInput = document.getElementById('passwordInput').value.trim();
       const errorMsg = document.getElementById('loginErrorMsg');
       
-      if (passwordInput === 'DESCONGELAR2026') {
+      if (passwordInput.toUpperCase() === 'DESCONGELAR2026') {
         localStorage.setItem('guia_descongelacion_auth', 'true');
         checkAuth();
       } else {
