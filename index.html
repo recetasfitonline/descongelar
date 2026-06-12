@@ -1,0 +1,2954 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guía Maestra de Descongelación y Rehidratación - Bonus Premium para Meal Prep y Cocina Saludable">
+  <title>Guía Maestra de Descongelación y Rehidratación</title>
+  
+  <!-- Google Fonts: Playfair Display for headings and Plus Jakarta Sans for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES Y DISEÑO DEL SISTEMA (CSS)
+       ========================================================================== */
+    :root {
+      --primary-color: #2c5e43;      /* Sage / Forest Green */
+      --primary-hover: #1b3d2b;
+      --primary-light: #e9f2ee;      /* Very soft green for backgrounds */
+      --accent-color: #d87a56;       /* Terracota Orange */
+      --accent-hover: #b9613e;
+      --accent-light: #fdf5f2;       /* Soft warm orange background */
+      --warning-color: #e09f3e;      /* Amber / Warm Gold */
+      --warning-light: #fef9f1;
+      --danger-color: #c94a47;       /* Soft Crimson */
+      --danger-light: #fdf2f2;
+      --bg-cream: #faf7f2;           /* Warm vanilla cream body bg */
+      --bg-white: #ffffff;
+      --text-dark: #232b27;          /* Soft charcoal green */
+      --text-muted: #5e6b64;
+      --border-color: #dbe4e0;       /* Very soft borders */
+      --shadow-sm: 0 2px 4px rgba(44, 94, 67, 0.03);
+      --shadow-md: 0 8px 20px rgba(44, 94, 67, 0.06);
+      --shadow-lg: 0 20px 40px rgba(44, 94, 67, 0.1);
+      
+      --font-title: 'Playfair Display', Georgia, serif;
+      --font-body: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --max-width: 900px;
+    }
+
+    /* Resets & Base Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    a:hover {
+      color: var(--accent-color);
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+    }
+
+    strong {
+      color: var(--primary-color);
+      font-weight: 700;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-title);
+      color: var(--primary-color);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-cream);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-color);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-color);
+    }
+
+    /* Header Progress Bar */
+    .progress-bar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 1000;
+    }
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+      transition: width 0.1s ease-out;
+    }
+
+    /* ==========================================================================
+       2. PORTADA (COVER PAGE)
+       ========================================================================== */
+    .cover-page {
+      min-height: 95vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--bg-cream) 40%, var(--primary-light) 100%);
+      position: relative;
+      overflow: hidden;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    /* Decorative Shapes */
+    .cover-page::before {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .cover-page::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--primary-light) 0%, transparent 75%);
+      bottom: -150px;
+      left: -150px;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    .cover-badge {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-color);
+      font-weight: 700;
+      background: var(--accent-light);
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(216, 122, 86, 0.25);
+      z-index: 1;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .cover-title {
+      font-size: 3.5rem;
+      max-width: 850px;
+      margin-bottom: 1.5rem;
+      z-index: 1;
+      font-weight: 700;
+      color: var(--primary-color);
+      text-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .cover-subtitle {
+      font-size: 1.35rem;
+      max-width: 650px;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      z-index: 1;
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .cover-illustration {
+      margin-bottom: 3rem;
+      z-index: 1;
+      animation: scaleIn 1s ease-out;
+    }
+
+    .cover-meta {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      z-index: 1;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.5rem;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .cover-meta-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cover-meta-val {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      margin-top: 2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 1;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-8px); }
+      60% { transform: translateY(-4px); }
+    }
+
+    /* ==========================================================================
+       3. ESTRUCTURA DE DISEÑO APP (SIDEBAR & CONTENIDO)
+       ========================================================================== */
+    .app-container {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    /* Sidebar Navigation (TOC) */
+    .sidebar {
+      background-color: var(--bg-white);
+      border-right: 1px solid var(--border-color);
+      padding: 2.5rem 1.5rem;
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition);
+      z-index: 90;
+    }
+
+    .toc-title {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .toc-item a {
+      display: block;
+      padding: 0.5rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      border-left: 2px solid transparent;
+      transition: var(--transition);
+    }
+
+    .toc-item a:hover,
+    .toc-item.active a {
+      color: var(--primary-color);
+      background-color: var(--primary-light);
+      border-left-color: var(--primary-color);
+      padding-left: 1rem;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    /* Floating / Fixed Download Button */
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 0.85rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(44, 94, 67, 0.15);
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .btn-download:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(44, 94, 67, 0.25);
+      color: var(--bg-white);
+    }
+
+    /* Main Content Area */
+    .content-container {
+      padding: 4rem 3rem;
+      background-color: var(--bg-white);
+      display: flex;
+      justify-content: center;
+    }
+
+    .content-wrapper {
+      max-width: var(--max-width);
+      width: 100%;
+    }
+
+    /* Responsive Mobile TOC Menu */
+    .mobile-header {
+      display: none;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 1.5rem;
+      z-index: 100;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-logo {
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: var(--primary-color);
+      font-size: 1.15rem;
+    }
+
+    .mobile-menu-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    /* ==========================================================================
+       4. HERRAMIENTAS INTERACTIVAS (WEB-ONLY)
+       ========================================================================== */
+    .interactive-dashboard {
+      background: linear-gradient(135deg, var(--bg-cream) 0%, var(--primary-light) 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 4rem;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+    }
+
+    .dashboard-tabs {
+      display: flex;
+      border-bottom: 2px solid var(--border-color);
+      margin-bottom: 2rem;
+      gap: 1rem;
+    }
+
+    .tab-btn {
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--primary-color);
+    }
+
+    .tab-btn.active {
+      color: var(--primary-color);
+      border-bottom-color: var(--primary-color);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    /* Tool 1: Buscador */
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 1rem 1.25rem 1rem 3rem;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(44, 94, 67, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+    }
+
+    .category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .filter-chip {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      color: var(--text-dark);
+      transition: var(--transition);
+    }
+
+    .filter-chip.active,
+    .filter-chip:hover {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      border-color: var(--primary-color);
+    }
+
+    .search-results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.25rem;
+      max-height: 400px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .food-card {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .food-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--primary-color);
+    }
+
+    .food-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .food-name {
+      font-family: var(--font-title);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+
+    .food-category {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      background-color: var(--primary-light);
+      color: var(--primary-color);
+      padding: 0.25rem 0.6rem;
+      border-radius: 50px;
+      font-weight: 600;
+    }
+
+    .food-details {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .food-detail-item {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      border-bottom: 1px dashed var(--border-color);
+      padding-bottom: 0.25rem;
+    }
+
+    .food-detail-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .food-detail-val {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .food-tip {
+      font-size: 0.8rem;
+      background-color: var(--accent-light);
+      padding: 0.5rem;
+      border-radius: 6px;
+      border-left: 3px solid var(--accent-color);
+      color: var(--text-dark);
+    }
+
+    /* Tool 2: Calculadora */
+    .calculator-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .calculator-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      background-color: var(--bg-white);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(44, 94, 67, 0.15);
+    }
+
+    .calc-result-box {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .calc-result-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .calc-time {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: 1rem;
+    }
+
+    .calc-progress-track {
+      width: 100%;
+      height: 8px;
+      background-color: var(--bg-cream);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .calc-progress-bar {
+      height: 100%;
+      width: 100%;
+      background-color: var(--primary-color);
+      border-radius: 10px;
+    }
+
+    .calc-result-duration {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .calc-alert {
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      background-color: var(--warning-light);
+      border: 1px solid rgba(224, 159, 62, 0.2);
+      padding: 0.75rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      width: 100%;
+    }
+
+    /* Tool 3: Checklist de Errores */
+    .checklist-wrapper {
+      background-color: var(--bg-white);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .checklist-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .checklist-progress-container {
+      margin-bottom: 1.5rem;
+    }
+
+    .checklist-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .score-badge {
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
+      font-weight: 700;
+    }
+    .score-green { background-color: var(--primary-light); color: var(--primary-color); }
+    .score-yellow { background-color: var(--warning-light); color: var(--warning-color); }
+    .score-red { background-color: var(--danger-light); color: var(--danger-color); }
+
+    .checklist-track {
+      height: 10px;
+      background-color: var(--bg-cream);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .checklist-bar {
+      height: 100%;
+      width: 100%;
+      background-color: var(--primary-color);
+      border-radius: 10px;
+      transition: width 0.4s ease, background-color 0.4s ease;
+    }
+
+    .checklist-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .checklist-item {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 1rem;
+    }
+
+    .checklist-item-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      cursor: pointer;
+    }
+
+    .checklist-checkbox {
+      margin-top: 0.35rem;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary-color);
+    }
+
+    .checklist-text {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    .checklist-solution {
+      display: none;
+      margin-top: 0.75rem;
+      margin-left: 1.75rem;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      background-color: var(--danger-light);
+      border-left: 4px solid var(--danger-color);
+      font-size: 0.85rem;
+      color: var(--text-dark);
+      animation: slideDown 0.3s ease-out forwards;
+    }
+
+    .checklist-item.checked .checklist-solution {
+      display: block;
+    }
+
+    .checklist-item.checked .checklist-text {
+      color: var(--danger-color);
+      text-decoration: line-through;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================================
+       5. DISEÑO DE TEXTO Y CONTENIDO (EDITORIAL PREMIUM)
+       ========================================================================== */
+    .section-separator {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+      margin: 4rem 0;
+      border: none;
+    }
+
+    .chapter-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .chapter-number {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .chapter-title {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Tables Style */
+    .table-container {
+      overflow-x: auto;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.95rem;
+      background-color: var(--bg-white);
+    }
+
+    th {
+      background-color: var(--primary-light);
+      color: var(--primary-color);
+      font-weight: 700;
+      padding: 1.15rem 1.5rem;
+      border-bottom: 2px solid var(--border-color);
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+    }
+
+    td {
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-dark);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) td {
+      background-color: #fafbf9;
+    }
+
+    /* Visual badges inside tables */
+    .badge-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      background-color: var(--primary-light);
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+    }
+
+    .badge-category {
+      font-weight: 600;
+      color: var(--accent-color);
+      background-color: var(--accent-light);
+      padding: 0.25rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.85rem;
+    }
+
+    /* Callouts (Errores, Trucos, Alerta) */
+    .callout {
+      margin: 2rem 0;
+      padding: 1.75rem;
+      border-radius: 12px;
+      display: flex;
+      gap: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .callout-icon {
+      flex-shrink: 0;
+      display: flex;
+      align-items: flex-start;
+      margin-top: 0.25rem;
+      font-size: 1.5rem;
+    }
+
+    .callout-content {
+      flex-grow: 1;
+    }
+
+    .callout-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 1. Trucos / Técnicas (Yellow/Gold) */
+    .callout-trick {
+      background-color: var(--warning-light);
+      border: 1px solid rgba(224, 159, 62, 0.2);
+      border-left: 5px solid var(--warning-color);
+    }
+    .callout-trick .callout-title {
+      color: var(--warning-color);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 2. Errores / Peligros (Red/Terracota) */
+    .callout-error {
+      background-color: var(--danger-light);
+      border: 1px solid rgba(201, 74, 71, 0.15);
+      border-left: 5px solid var(--danger-color);
+    }
+    .callout-error .callout-title {
+      color: var(--danger-color);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* 3. Alertas Generales (Orange) */
+    .callout-warning {
+      background-color: var(--accent-light);
+      border: 1px solid rgba(216, 122, 86, 0.15);
+      border-left: 5px solid var(--accent-color);
+    }
+    .callout-warning .callout-title {
+      color: var(--accent-color);
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .conclusion-box {
+      background-color: var(--primary-light);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-top: 4px solid var(--primary-color);
+    }
+
+    .conclusion-box h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ==========================================================================
+       6. RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .app-container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+      .mobile-header {
+        display: flex;
+      }
+      .content-container {
+        padding: 3rem 1.5rem;
+      }
+      .cover-title {
+        font-size: 2.5rem;
+      }
+      .cover-subtitle {
+        font-size: 1.15rem;
+      }
+    }
+
+    /* Mobile drawer style sidebar for when menu is open on mobile */
+    .sidebar.mobile-open {
+      display: flex;
+      position: fixed;
+      top: 57px; /* height of mobile header */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 57px);
+      background-color: var(--bg-white);
+      z-index: 200;
+      overflow-y: auto;
+      padding: 2rem 1.5rem;
+      box-shadow: var(--shadow-lg);
+    }
+
+    /* ==========================================================================
+       7. ESTILOS DE IMPRESIÓN (@media print)
+       ========================================================================== */
+    @media print {
+      /* Base overrides */
+      html, body {
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 12pt;
+      }
+
+      /* Hide all interactive elements */
+      .no-print,
+      .progress-bar-container,
+      .sidebar,
+      .mobile-header,
+      .interactive-dashboard,
+      .scroll-indicator,
+      .btn-download {
+        display: none !important;
+      }
+
+      /* Layout */
+      .app-container {
+        display: block;
+      }
+
+      .content-container {
+        padding: 0;
+        display: block;
+      }
+
+      .content-wrapper {
+        max-width: 100%;
+      }
+
+      /* Cover Page */
+      .cover-page {
+        min-height: 100vh;
+        page-break-after: always;
+        background: none !important;
+        border: none;
+        padding: 4cm 2cm;
+      }
+      
+      .cover-badge {
+        border: 1px solid #000000;
+        color: #000000;
+        background: none;
+      }
+      
+      .cover-title {
+        font-size: 32pt;
+        color: #000000;
+      }
+
+      .cover-subtitle {
+        font-size: 16pt;
+        color: #444444;
+      }
+
+      /* Headers */
+      h1, h2, h3, h4 {
+        color: #000000 !important;
+      }
+
+      /* Chapters break */
+      h2.chapter-title,
+      section.chapter-section {
+        page-break-before: always;
+        padding-top: 1cm;
+      }
+
+      /* Prevent page breaks in items */
+      table, tr, td, th {
+        page-break-inside: avoid !important;
+      }
+
+      blockquote, .callout {
+        page-break-inside: avoid !important;
+        border-color: #000000 !important;
+        background: #fdfdfd !important;
+        color: #000000 !important;
+      }
+      
+      .callout-title {
+        color: #000000 !important;
+      }
+
+      p, li {
+        orphans: 3;
+        widows: 3;
+      }
+
+      /* Printable error checklist layout static conversion */
+      .print-checklist-static {
+        display: block !important;
+        margin: 2rem 0;
+        border: 1px solid #000;
+        padding: 1.5rem;
+        border-radius: 8px;
+        page-break-inside: avoid;
+      }
+      
+      .print-checklist-title {
+        font-weight: bold;
+        font-size: 14pt;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid #000;
+        padding-bottom: 0.5rem;
+      }
+
+      .print-checklist-item {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+        font-size: 11pt;
+      }
+      .print-checklist-box {
+        width: 15px;
+        height: 15px;
+        border: 1px solid #000;
+        flex-shrink: 0;
+      }
+
+      /* Margins & sizing */
+      @page {
+        size: A4;
+        margin: 2cm 2cm 2cm 2cm;
+      }
+
+      /* Clean page headers/footers */
+      .print-header {
+        display: block !important;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 5px;
+        font-size: 8pt;
+        color: #666;
+        text-align: right;
+      }
+
+      .print-footer {
+        display: block !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+        font-size: 8pt;
+        color: #666;
+        text-align: center;
+      }
+    }
+
+    .print-header,
+    .print-footer {
+      display: none;
+    }
+
+    /* Login System Styles */
+    #loginScreen {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-cream) 0%, var(--primary-light) 100%);
+      padding: 2rem;
+      font-family: var(--font-body);
+    }
+    .login-card {
+      background-color: var(--bg-white);
+      border-radius: 16px;
+      padding: 3rem 2.5rem;
+      max-width: 450px;
+      width: 100%;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-color);
+      text-align: center;
+      animation: scaleIn 0.5s ease-out;
+    }
+    .login-icon {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    .login-title {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 0.75rem;
+    }
+    .login-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      width: 100%;
+    }
+    .login-input {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      outline: none;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .login-input:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(44, 94, 67, 0.15);
+    }
+    .btn-login {
+      background-color: var(--primary-color);
+      color: var(--bg-white);
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    .btn-login:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+    .login-error {
+      color: var(--danger-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      background-color: var(--danger-light);
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid rgba(201, 74, 71, 0.1);
+      display: none;
+    }
+    .login-footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.25rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div id="loginScreen" class="no-print" style="display: none;">
+    <div class="login-card">
+      <div class="login-icon">🔒</div>
+      <h2 class="login-title">Acceso Premium</h2>
+      <p class="login-subtitle">Introduce la contraseña de acceso entregada en tu PDF de compra de Hotmart para desbloquear la guía.</p>
+      
+      <div class="login-form">
+        <input type="password" id="passwordInput" class="login-input" placeholder="Contraseña de acceso" onkeydown="if(event.key === 'Enter') attemptLogin()">
+        <div id="loginErrorMsg" class="login-error"></div>
+        <button class="btn-login" onclick="attemptLogin()">Desbloquear Guía</button>
+      </div>
+      
+      <div class="login-footer">
+        © Recetas Fit Online | Guía Maestra de Descongelación
+      </div>
+    </div>
+  </div>
+
+  <!-- Main App Layout Wrapper -->
+  <div id="mainAppLayout" style="display: none;">
+
+    <!-- Top Progress Bar (Web-only) -->
+    <div class="progress-bar-container no-print">
+      <div class="progress-bar" id="pageProgressBar"></div>
+    </div>
+
+  <!-- Mobile Navigation Header (Web-only) -->
+  <header class="mobile-header no-print">
+    <span class="mobile-logo">Guía Descongelación Perfecta</span>
+    <button class="mobile-menu-btn" id="menuToggle" aria-label="Toggle Menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </header>
+
+  <!-- PORTADA (COVER PAGE) -->
+  <header class="cover-page" id="inicio">
+    <div class="cover-badge">Bonus Digital Premium</div>
+    <h1 class="cover-title">Guía Maestra de Descongelación y Rehidratación</h1>
+    <p class="cover-subtitle">Cómo recuperar el sabor, la textura y los nutrientes de tus comidas congeladas como una experta en meal prep.</p>
+    
+    <!-- Premium SVG Icon Container representing frozen freshness, cooking, time -->
+    <div class="cover-illustration">
+      <svg width="150" height="150" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="46" stroke="#2c5e43" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="50" cy="50" r="40" fill="#e9f2ee"/>
+        <!-- Snowflake / Ice symbol -->
+        <path d="M50 20V80M20 50H80" stroke="#4a90e2" stroke-width="3" stroke-linecap="round"/>
+        <path d="M29 29L71 71M29 71L71 29" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+        <!-- Small snowflake details -->
+        <path d="M50 30L45 35M50 30L55 35M50 70L45 65M50 70L55 65M30 50L35 45M30 50L35 55M70 50L65 45M70 50L65 55" stroke="#4a90e2" stroke-width="2" stroke-linecap="round"/>
+        <!-- Leaf / Fresh symbol overlap -->
+        <path d="M50 50C50 35 65 35 65 50C65 65 50 65 50 50Z" fill="#2c5e43" opacity="0.85"/>
+        <path d="M50 50C35 50 35 35 50 35C65 35 50 50 50 50Z" fill="#d87a56" opacity="0.85"/>
+      </svg>
+    </div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-val">100%</span>
+        <span>Saludable</span>
+      </div>
+      <div class="cover-meta-item" style="border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color); padding: 0 1.5rem;">
+        <span class="cover-meta-val">Meal Prep</span>
+        <span>Eficiente</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-val">Seguro</span>
+        <span>Alimentario</span>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" onclick="document.getElementById('layout-section').scrollIntoView();">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--primary-color)">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+    </div>
+  </header>
+
+  <!-- MAIN APP CONTAINER -->
+  <div class="app-container" id="layout-section">
+    
+    <!-- SIDEBAR (TOC & PDF Trigger) -->
+    <aside class="sidebar no-print" id="sidebar">
+      <div class="toc-wrapper">
+        <h3 class="toc-title">Tabla de Contenidos</h3>
+        <nav>
+          <ul class="toc-list">
+            <li class="toc-item active"><a href="#inicio">Portada</a></li>
+            <li class="toc-item"><a href="#introduccion">Introducción</a></li>
+            <li class="toc-item"><a href="#capitulo1">Cap. 1: La Ciencia</a></li>
+            <li class="toc-item"><a href="#capitulo2">Cap. 2: Los 4 Métodos</a></li>
+            <li class="toc-item"><a href="#capitulo3">Cap. 3: Por Alimento</a></li>
+            <li class="toc-item"><a href="#capitulo4">Cap. 4: Tabla de Tiempos</a></li>
+            <li class="toc-item"><a href="#capitulo5">Cap. 5: 10 Errores</a></li>
+            <li class="toc-item"><a href="#capitulo6">Cap. 6: Textura y Sabor</a></li>
+            <li class="toc-item"><a href="#capitulo7">Cap. 7: Señales de Alerta</a></li>
+            <li class="toc-item"><a href="#conclusion">Conclusión</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn-download" onclick="window.print()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Descargar PDF
+        </button>
+      </div>
+    </aside>
+
+    <!-- CONTENT AREA -->
+    <main class="content-container">
+      <div class="content-wrapper">
+        
+        <!-- ==========================================================================
+             HERRAMIENTAS INTERACTIVAS (WEB-ONLY DASHBOARD)
+             ========================================================================== -->
+        <section class="interactive-dashboard no-print">
+          <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">⚙️ Herramientas Digitales Interactivas</h2>
+          
+          <div class="dashboard-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-buscador')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Buscador Rápido
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-calculadora')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Calculadora de Tiempos
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-checklist')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Auto-Evaluación
+            </button>
+          </div>
+
+          <!-- TAB 1: BUSCADOR -->
+          <div id="tab-buscador" class="tab-content active">
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Escribe el alimento que deseas buscar para obtener tiempos y directrices exactas de descongelación al instante.</p>
+            
+            <div class="search-wrapper">
+              <span class="search-icon">🔍</span>
+              <input type="text" id="searchInput" class="search-input" placeholder="Buscar alimento... (Ej. Pollo, Salmón, Brócoli)" oninput="filterFoods()">
+            </div>
+
+            <div class="category-filters">
+              <button class="filter-chip active" onclick="filterCategory(event, 'todos')">Todos</button>
+              <button class="filter-chip" onclick="filterCategory(event, 'carnes')">Carnes</button>
+              <button class="filter-chip" onclick="filterCategory(event, 'aves')">Aves</button>
+              <button class="filter-chip" onclick="filterCategory(event, 'pescados')">Mariscos</button>
+              <button class="filter-chip" onclick="filterCategory(event, 'vegetales')">Vegetales</button>
+              <button class="filter-chip" onclick="filterCategory(event, 'otros')">Otros</button>
+            </div>
+
+            <div class="search-results" id="searchResults">
+              <!-- Food cards will be injected here via JavaScript -->
+            </div>
+          </div>
+
+          <!-- TAB 2: CALCULADORA -->
+          <div id="tab-calculadora" class="tab-content">
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Calcula exactamente a qué hora estará lista tu comida para cocinar según el método seleccionado.</p>
+            
+            <div class="calculator-grid">
+              <div class="calc-inputs">
+                <div class="form-group">
+                  <label for="calcFoodSelect">Selecciona el alimento:</label>
+                  <select id="calcFoodSelect" class="form-control" onchange="calculateDefrostTime()">
+                    <!-- Dropdown populated via JS -->
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="calcMethodSelect">Método de descongelación:</label>
+                  <select id="calcMethodSelect" class="form-control" onchange="calculateDefrostTime()">
+                    <option value="fridge">Nevera (Recomendado y Seguro)</option>
+                    <option value="water">Agua Fría Corriente (Rápido)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="calcStartTime">Hora de inicio:</label>
+                  <input type="time" id="calcStartTime" class="form-control" onchange="calculateDefrostTime()">
+                </div>
+              </div>
+
+              <div class="calc-result-box">
+                <span class="calc-result-title">Hora Estimada de Finalización</span>
+                <div class="calc-time" id="calcResultTime">--:--</div>
+                
+                <div class="calc-progress-track">
+                  <div class="calc-progress-bar" id="calcProgressBar"></div>
+                </div>
+                
+                <p class="calc-result-duration" id="calcResultDuration">Duración estimada: --</p>
+                <div class="calc-alert" id="calcAlertBox">
+                  Selecciona los parámetros para ver los consejos de seguridad.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: CHECKLIST DE ERRORES -->
+          <div id="tab-checklist" class="tab-content">
+            <div class="checklist-wrapper">
+              <div class="checklist-header">
+                <h3 style="font-family: var(--font-body); font-size: 1.15rem; margin-bottom: 0.5rem;">Evaluador de Riesgo Alimentario</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Marca con total honestidad cuáles de estos errores cometes habitualmente en tu cocina para ver tu nivel de riesgo.</p>
+              </div>
+
+              <div class="checklist-progress-container">
+                <div class="checklist-progress-text">
+                  <span>Nivel de Seguridad en tu Cocina</span>
+                  <span id="scoreBadge" class="score-badge score-green">100% (Segura)</span>
+                </div>
+                <div class="checklist-track">
+                  <div class="checklist-bar" id="checklistBar"></div>
+                </div>
+              </div>
+
+              <div class="checklist-items" id="checklistItems">
+                <!-- Checkbox items generated by Javascript to keep code clean -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             INTRODUCCIÓN
+             ========================================================================== -->
+        <article id="introduccion">
+          <header class="chapter-header">
+            <h2 class="chapter-title">Introducción: El error que comete el 90% de las personas</h2>
+          </header>
+          <p>Congelar bien es solo la mitad del trabajo. La otra mitad — la que casi nadie enseña — es <strong>descongelar correctamente</strong>.</p>
+          <p>Un plato perfectamente preparado y congelado puede arruinarse por completo en el proceso de descongelación si no sabes lo que estás haciendo. Textura gomosa, sabor aguado, pérdida de nutrientes, y en el peor de los casos, un alimento que representa un riesgo real para tu salud.</p>
+          <p>Esta guía existe para que eso nunca te pase.</p>
+          <p>Aprenderás exactamente cómo descongelar cada tipo de alimento, qué método usar según la situación, cuánto tiempo tienes antes de que algo deje de ser seguro, y los errores que debes evitar a toda costa.</p>
+        </article>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 1: LA CIENCIA DETRÁS
+             ========================================================================== -->
+        <section id="capitulo1" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 1</span>
+            <h2 class="chapter-title">La Ciencia Detrás de la Descongelación</h2>
+          </header>
+          
+          <h3>¿Qué le pasa realmente a tu comida cuando se congela?</h3>
+          <p>Cuando congelas un alimento, el agua dentro de sus células se convierte en cristales de hielo. Si la congelación fue rápida, esos cristales son pequeños y el daño a la estructura celular es mínimo. Si fue lenta, los cristales son grandes y rompen las paredes celulares — por eso algunos alimentos quedan aguados o blandos al descongelarse.</p>
+          <p>La descongelación es el proceso inverso: esos cristales vuelven a convertirse en agua líquida. Si este proceso ocurre demasiado rápido o a temperaturas incorrectas, dos cosas malas suceden:</p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li><strong>El líquido se escapa</strong> de las células dañadas y el alimento pierde jugosidad y textura.</li>
+            <li><strong>Las bacterias se multiplican</strong> si el alimento pasa tiempo en la "zona de peligro" de temperatura (entre 4°C y 60°C).</li>
+          </ol>
+
+          <h3>La zona de peligro: lo que debes memorizar</h3>
+          <p>Entre <strong>4°C y 60°C</strong> las bacterias se duplican cada 20 minutos. Un alimento en este rango por más de <strong>2 horas acumuladas</strong> ya representa un riesgo.</p>
+          
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">Peligro Crítico</div>
+              <p>Esto significa que descongelar a temperatura ambiente en la cocina —lo que hace la mayoría— es el método más peligroso de todos, aunque sea el más conveniente.</p>
+            </div>
+          </div>
+
+          <h3>¿Se pierden nutrientes al descongelar?</h3>
+          <p>Depende del método. Las vitaminas hidrosolubles (C y complejo B) son las más vulnerables. El calor las destruye, y el agua las arrastra. La descongelación en nevera preserva prácticamente el 100% de los nutrientes. La descongelación en microondas a alta potencia puede degradar entre un 10% y un 30% de algunas vitaminas sensibles al calor.</p>
+          <p>Las proteínas y los minerales se preservan casi completamente independientemente del método.</p>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 2: LOS 4 MÉTODOS
+             ========================================================================== -->
+        <section id="capitulo2" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 2</span>
+            <h2 class="chapter-title">Los 4 Métodos de Descongelación</h2>
+          </header>
+
+          <!-- Método 1 -->
+          <h3>Método 1: En la nevera (refrigerador) — El método oro</h3>
+          <p><strong>Cómo funciona:</strong> Pasas el alimento del congelador a la nevera y lo dejas descongelar lentamente a temperatura controlada (entre 1°C y 4°C).</p>
+          
+          <p><strong>Ventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Es el único método 100% seguro desde el punto de vista alimentario.</li>
+            <li>Preserva al máximo la textura y los nutrientes.</li>
+            <li>No requiere vigilancia ni atención.</li>
+            <li>El alimento descongelado puede volver a congelarse (si no fue cocinado previamente).</li>
+          </ul>
+          
+          <p><strong>Desventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Requiere planificación anticipada.</li>
+            <li>Es el más lento de todos los métodos.</li>
+          </ul>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de alimento</th>
+                  <th>Tiempo estimado en nevera</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Porciones individuales de carne o pollo</td>
+                  <td><span class="badge-time">12 a 24 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Piezas grandes de carne (más de 1 kg)</td>
+                  <td><span class="badge-time">24 a 48 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Pescado en filetes</td>
+                  <td><span class="badge-time">8 a 12 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Sopas y guisos en porciones</td>
+                  <td><span class="badge-time">8 a 12 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Vegetales cocidos</td>
+                  <td><span class="badge-time">4 a 8 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Pan y masas</td>
+                  <td><span class="badge-time">6 a 10 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Postres y pasteles</td>
+                  <td><span class="badge-time">6 a 12 horas</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-trick">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <div class="callout-title">Truco Práctico</div>
+              <p>Cada noche antes de dormir, saca del congelador lo que vas a usar al día siguiente y pásalo a la nevera. Así cuando cocines ya estará listo.</p>
+            </div>
+          </div>
+
+          <!-- Método 2 -->
+          <h3>Método 2: Bajo agua fría corriente — El método rápido y seguro</h3>
+          <p><strong>Cómo funciona:</strong> Pones el alimento en una bolsa hermética (si no lo está ya) y lo sumerges en agua fría corriente o cambias el agua cada 30 minutos.</p>
+          
+          <p><strong>Ventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Mucho más rápido que la nevera.</li>
+            <li>Sigue siendo seguro si se hace correctamente.</li>
+            <li>Bueno para emergencias de última hora.</li>
+          </ul>
+          
+          <p><strong>Desventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Requiere atención (si usas agua estática hay que cambiarla).</li>
+            <li>Gasta agua.</li>
+            <li>No funciona bien para piezas muy grandes.</li>
+          </ul>
+
+          <div class="callout callout-warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-content">
+              <div class="callout-title">Regla de oro</div>
+              <p>El agua debe estar fría, no tibia ni caliente. El agua caliente descongela el exterior mientras el interior sigue congelado, creando condiciones perfectas para bacterias.</p>
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tipo de alimento</th>
+                  <th>Tiempo estimado bajo agua fría</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Filetes de pollo o res (individuales)</td>
+                  <td><span class="badge-time">1 a 2 horas</span></td>
+                </tr>
+                <tr>
+                  <td>Filetes de pescado</td>
+                  <td><span class="badge-time">30 a 60 minutos</span></td>
+                </tr>
+                <tr>
+                  <td>Camarones o mariscos</td>
+                  <td><span class="badge-time">15 a 30 minutos</span></td>
+                </tr>
+                <tr>
+                  <td>Sopas en bolsa</td>
+                  <td><span class="badge-time">30 a 45 minutos</span></td>
+                </tr>
+                <tr>
+                  <td>Vegetales</td>
+                  <td><span class="badge-time">15 a 30 minutos</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">Importante</div>
+              <p>El alimento descongelado por este método debe cocinarse inmediatamente. No se puede volver a congelar sin cocinar.</p>
+            </div>
+          </div>
+
+          <!-- Método 3 -->
+          <h3>Método 3: En el microondas — El método de emergencia</h3>
+          <p><strong>Cómo funciona:</strong> Usas la función "descongelar" de tu microondas, que trabaja a potencia reducida (generalmente 30%) para descongelar sin cocinar.</p>
+          
+          <p><strong>Ventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>El más rápido de todos.</li>
+            <li>Práctico para situaciones de urgencia.</li>
+          </ul>
+          
+          <p><strong>Desventajas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Puede descongelar de forma desigual (bordes calientes, centro frío).</li>
+            <li>Mayor pérdida de nutrientes sensibles al calor.</li>
+            <li>Puede comenzar a cocinar partes del alimento si no se vigila.</li>
+            <li>No funciona bien para piezas muy grandes o densas.</li>
+          </ul>
+
+          <p><strong>Cómo usarlo correctamente:</strong></p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Usa siempre la función "descongelar", nunca potencia alta.</li>
+            <li>Detén el proceso cada 2-3 minutos para revisar y rotar el alimento.</li>
+            <li>Cocina inmediatamente después — no dejes reposar un alimento descongelado en microondas.</li>
+          </ol>
+
+          <p><strong>Lo que NO descongelar en microondas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Piezas grandes de carne (quedan cocidas por fuera y congeladas por dentro).</li>
+            <li>Huevos enteros con cáscara (pueden explotar).</li>
+            <li>Alimentos en envases metálicos o con tapa hermética sellada.</li>
+          </ul>
+
+          <!-- Método 4 -->
+          <h3>Método 4: Cocción directa desde congelado — El método olvidado</h3>
+          <p><strong>Cómo funciona:</strong> Cocinas el alimento directamente sin descongelarlo.</p>
+          <p>Este método funciona perfectamente para vegetales congelados, sopas, guisos, arroces y muchas salsas. De hecho, para los vegetales es el método preferido porque minimiza la pérdida de nutrientes y preserva mejor la textura.</p>
+          
+          <p><strong>Alimentos que funcionan muy bien cocinados directo desde el congelador:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Todos los vegetales (brócoli, espinacas, zanahorias, guisantes).</li>
+            <li>Sopas y caldos.</li>
+            <li>Guisos y estofados.</li>
+            <li>Salsas de tomate y salsas base.</li>
+            <li>Arroz cocido.</li>
+            <li>Legumbres cocidas (frijoles, lentejas, garbanzos).</li>
+            <li>Empanadas y arepas (al horno o sartén).</li>
+          </ul>
+
+          <p><strong>Cómo hacerlo:</strong> Añade directamente al sartén, olla o bandeja de horno. Ajusta el tiempo de cocción sumando entre un 30% y un 50% más de lo habitual.</p>
+          
+          <p><strong>Lo que NO funciona cocinado directo desde congelado:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Piezas grandes de carne o pollo (el exterior se quema antes de que el interior llegue a temperatura segura).</li>
+            <li>Huevos.</li>
+            <li>Mariscos enteros con cáscara.</li>
+          </ul>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 3: DESCONGELACIÓN POR ALIMENTO
+             ========================================================================== -->
+        <section id="capitulo3" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 3</span>
+            <h2 class="chapter-title">Descongelación por Tipo de Alimento</h2>
+          </header>
+
+          <!-- Carnes Rojas -->
+          <h3>Carnes rojas (res, cerdo, cordero)</h3>
+          <p>Las carnes rojas son de los alimentos que más se benefician de una buena descongelación porque la textura es crucial.</p>
+          <p><strong>Método recomendado:</strong> Nevera, siempre que sea posible.</p>
+          <p><strong>Tiempos en nevera:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Filetes y cortes delgados (menos de 2 cm): 12 a 18 horas</li>
+            <li>Cortes medianos (chuletas, milanesas): 18 a 24 horas</li>
+            <li>Piezas enteras o asados grandes: 24 a 48 horas por cada 1.5 kg</li>
+          </ul>
+          <p><strong>Señal de que está bien descongelada:</strong> La carne cede al presionar con el dedo, no está dura en el centro, y el color vuelve a ser rojo o rosado. Si quedaron partes con cristales de hielo en el centro, no está lista.</p>
+          
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">Error más común</div>
+              <p>Descongelar a temperatura ambiente sobre la mesada. A 20-22°C de cocina, la superficie exterior de la carne entra en zona de peligro bacteriano mucho antes de que el interior se descongele.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-trick">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <div class="callout-title">Cómo recuperar la jugosidad</div>
+              <p>Si la carne perdió líquido al descongelarse (verás un líquido rosado en el envase), no lo tires. Úsalo para marinar o agrégalo a la cocción. Tiene sabor y proteínas disueltas.</p>
+            </div>
+          </div>
+
+          <!-- Pollo y aves -->
+          <h3>Pollo y aves</h3>
+          <p>El pollo mal descongelado es una de las principales causas de intoxicación alimentaria porque la Salmonella y Campylobacter son muy comunes en aves y necesitan temperatura interna de 74°C para destruirse.</p>
+          <p><strong>Método recomendado:</strong> Nevera para piezas enteras y muslos; agua fría para pechugas individuales cuando necesitas rapidez.</p>
+          <p><strong>Tiempos en nevera:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Pechugas individuales: 12 a 18 horas</li>
+            <li>Muslos y contramuslos: 18 a 24 horas</li>
+            <li>Pollo entero pequeño (1-1.5 kg): 24 horas</li>
+            <li>Pollo entero grande (más de 2 kg): 36 a 48 horas</li>
+          </ul>
+
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">Regla crítica</div>
+              <p>Nunca descongeles pollo a temperatura ambiente. Nunca.</p>
+            </div>
+          </div>
+
+          <div class="callout callout-warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-content">
+              <div class="callout-title">Después de descongelar</div>
+              <p>No laves el pollo bajo el grifo. Esto no elimina bacterias, solo las esparce por el fregadero y superficies cercanas. El calor de la cocción es lo único que las destruye.</p>
+            </div>
+          </div>
+
+          <!-- Pescados y mariscos -->
+          <h3>Pescado y mariscos</h3>
+          <p>El pescado es delicado y se deteriora rápido. Una buena descongelación marca una diferencia enorme en sabor y textura.</p>
+          <p><strong>Método recomendado:</strong> Nevera para la noche anterior, o agua fría para rapidez.</p>
+          <p><strong>Tiempos en nevera:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Filetes delgados (menos de 2 cm): 8 a 12 horas</li>
+            <li>Filetes gruesos: 12 a 18 horas</li>
+            <li>Pescado entero pequeño: 18 a 24 horas</li>
+            <li>Camarones y langostinos: 6 a 10 horas</li>
+          </ul>
+
+          <div class="callout callout-trick">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <div class="callout-title">El truco del papel absorbente</div>
+              <p>Después de descongelar, seca muy bien el pescado con papel de cocina antes de cocinarlo. La humedad en la superficie impide que se dore bien y crea vapor en lugar de sellado.</p>
+            </div>
+          </div>
+
+          <p><strong>Camarones y mariscos:</strong> Son los más fáciles. Bajo agua fría corriente en 15-30 minutos. Para salteados o arroces, puedes agregarlos directamente congelados al sartén caliente.</p>
+          
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">Señal de mal estado</div>
+              <p>Olor muy fuerte a amoniaco, textura viscosa o esponjosa, color grisáceo o verdoso. El pescado fresco descongelado huele a mar, no a pescado fermentado.</p>
+            </div>
+          </div>
+
+          <!-- Vegetales -->
+          <h3>Vegetales</h3>
+          <p>Los vegetales congelados son probablemente los alimentos más fáciles de manejar porque en la mayoría de casos no necesitan descongelación previa.</p>
+          <p><strong>Método recomendado:</strong> Cocción directa desde congelado.</p>
+          <p>Los vegetales blanqueados antes de congelar (que es como deben congelarse) solo necesitan calor para activarse. Tirarlos directamente al sartén con aceite caliente, agregarlos a sopas o cocinarlos al vapor directo da mejores resultados que descongelarlos primero.</p>
+          
+          <p><strong>Cuándo sí conviene descongelar antes:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Si los vas a usar en ensaladas frías (descongelar en nevera 4-6 horas)</li>
+            <li>Si los vas a añadir a masas o rellenos donde el exceso de agua es problemático (descongelar en nevera y escurrir bien)</li>
+          </ul>
+
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">El error del microondas con vegetales</div>
+              <p>El microondas tiende a cocinar de más los vegetales congelados, dejándolos blandos y sin textura. Mejor directo al sartén o la olla.</p>
+            </div>
+          </div>
+
+          <!-- Sopas, guisos y caldos -->
+          <h3>Sopas, guisos y caldos</h3>
+          <p>Son los más fáciles de todo el sistema de congelación porque se adaptan a casi cualquier método.</p>
+          <p><strong>Método recomendado para rapidez:</strong> Baño de agua caliente o directamente en la olla a fuego muy bajo.</p>
+          
+          <p><strong>Cómo hacerlo en olla:</strong></p>
+          <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Saca el envase del congelador.</li>
+            <li>Si está en bolsa, ponlo directamente en una olla con agua tibia hasta que puedas desmoldarlo.</li>
+            <li>Pasa el bloque congelado a la olla.</li>
+            <li>Calienta a fuego muy bajo con tapa, revolviendo ocasionalmente.</li>
+          </ol>
+          <p><strong>Tiempo:</strong> Entre 15 y 30 minutos dependiendo del tamaño de la porción.</p>
+
+          <div class="callout callout-trick">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <div class="callout-title">Truco para sopas cremosas</div>
+              <p>Si se separaron durante la congelación (esto es normal con sopas de crema o leche), revuelve vigorosamente con un batidor de mano mientras calientas. La emulsión se recupera con el calor.</p>
+            </div>
+          </div>
+
+          <!-- Arroces, pastas y granos -->
+          <h3>Arroces, pastas y granos</h3>
+          <p><strong>Método recomendado:</strong> Microondas con un poco de agua, o sartén con tapa.</p>
+          <p><strong>En microondas:</strong> Agrega 1-2 cucharadas de agua por taza de arroz antes de calentar. Cubre con tapa o film y usa potencia media. El vapor rehidrata y evita que quede seco.</p>
+          <p><strong>En sartén:</strong> Agrega el arroz congelado directamente al sartén con un chorrito de agua o caldo. Tapa y calienta a fuego medio-bajo por 5-8 minutos, revolviendo una vez a mitad.</p>
+          <p><strong>Para pastas:</strong> El método de sartén funciona mejor que el microondas. Agrega la pasta congelada directamente a la salsa caliente, añade un poco del agua de cocción guardada (o agua simple) y calienta a fuego medio. La pasta absorbe el líquido y se rehidrata mientras se calienta.</p>
+
+          <!-- Pan, masas -->
+          <h3>Pan, masas y productos de panadería</h3>
+          <p><strong>Método recomendado:</strong> Temperatura ambiente para pan rebanado y pequeñas piezas; horno para piezas enteras.</p>
+          <p><strong>Pan rebanado:</strong> Saca las rebanadas directamente del congelador y tuéstalas. No necesitas descongelar. El tostador o la sartén con mantequilla funciona perfecto.</p>
+          <p><strong>Panes enteros y bollos:</strong> Sácalos a temperatura ambiente 1-2 horas antes, envueltos en un paño limpio. Para recuperar la corteza crujiente, pasa 5 minutos en horno a 180°C al final.</p>
+          <p><strong>Masas crudas (empanadas, arepas, tortillas):</strong> Descongelar en nevera 8-12 horas antes de cocinar. Cocinar directamente desde congelado también funciona pero requiere más tiempo de cocción.</p>
+          <p><strong>Pasteles y bizcochos:</strong> Descongelar en nevera 6-10 horas. Si tienen glaseado o crema, nunca en microondas ni a temperatura ambiente — el glaseado se derrite antes de que el interior se descongele.</p>
+
+          <!-- Lácteos -->
+          <h3>Lácteos y preparaciones con leche</h3>
+          <p>Los lácteos son los más problemáticos para congelar y descongelar porque las proteínas y grasas tienden a separarse.</p>
+          <p><strong>Leche y crema:</strong> Siempre descongelar en nevera. Batir o mezclar vigorosamente después de descongelar para reintegrar la emulsión.</p>
+          <p><strong>Quesos duros (parmesano, manchego, cheddar):</strong> Descongelar en nevera 12-24 horas. La textura cambia ligeramente (más desmenuzable) pero el sabor se mantiene. Ideal para usar en cocina, no tanto para comer solo.</p>
+          <p><strong>Quesos blandos y frescos:</strong> No congelan bien. Si los congelaste, úsalos solo como ingrediente cocido (en salsas, gratinados, rellenos) nunca para comer directamente.</p>
+          <p><strong>Preparaciones con crema o leche (salsas blancas, gratinados):</strong> Descongelar en nevera y calentar a fuego muy bajo revolviendo constantemente. Si se separan, un batidor de mano mientras calienta suele recuperarlos.</p>
+
+          <!-- Legumbres -->
+          <h3>Legumbres (frijoles, lentejas, garbanzos)</h3>
+          <p><strong>Método recomendado:</strong> Directamente a la olla o sartén desde congelado.</p>
+          <p>Las legumbres cocidas y congeladas son de los alimentos más fáciles. Van directo a la preparación. En sopas, guisos o salteados simplemente se agregan congeladas y se calientan con el resto de los ingredientes.</p>
+          <p><strong>Para ensaladas frías:</strong> Descongelar en nevera 4-6 horas o bajo agua fría corriente por 10-15 minutos.</p>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 4: TABLA VISUAL DE TIEMMOS MÁXIMOS
+             ========================================================================== -->
+        <section id="capitulo4" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 4</span>
+            <h2 class="chapter-title">Tabla Visual de Tiempos Máximos en Congelador</h2>
+          </header>
+          
+          <p>Esta tabla te dice hasta cuándo un alimento mantiene su calidad óptima. Más tiempo no significa que sea peligroso, sino que la calidad empieza a degradarse.</p>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Alimento</th>
+                  <th>Tiempo máximo recomendado</th>
+                  <th>Notas de conservación</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pollo y pavo (piezas)</td>
+                  <td><span class="badge-category">9 meses</span></td>
+                  <td>Guardar en bolsa hermética extraída de aire</td>
+                </tr>
+                <tr>
+                  <td>Pollo y pavo entero</td>
+                  <td><span class="badge-category">12 meses</span></td>
+                  <td>Idealmente envuelto al vacío</td>
+                </tr>
+                <tr>
+                  <td>Carne molida de res o cerdo</td>
+                  <td><span class="badge-category">3 a 4 meses</span></td>
+                  <td>Se deteriora más rápido que los cortes enteros</td>
+                </tr>
+                <tr>
+                  <td>Filetes y cortes de res</td>
+                  <td><span class="badge-category">6 a 12 meses</span></td>
+                  <td>Eliminar el exceso de grasa exterior antes</td>
+                </tr>
+                <tr>
+                  <td>Chuletas y cortes de cerdo</td>
+                  <td><span class="badge-category">4 a 6 meses</span></td>
+                  <td>Bien envueltas individualmente</td>
+                </tr>
+                <tr>
+                  <td>Pescado blanco (merluza, tilapia, bacalao)</td>
+                  <td><span class="badge-category">6 meses</span></td>
+                  <td>Textura muy sensible al congelar lento</td>
+                </tr>
+                <tr>
+                  <td>Pescado graso (salmón, atún, sardina)</td>
+                  <td><span class="badge-category">2 a 3 meses</span></td>
+                  <td>La grasa se oxida más rápido</td>
+                </tr>
+                <tr>
+                  <td>Camarones y mariscos</td>
+                  <td><span class="badge-category">3 a 6 meses</span></td>
+                  <td>Mejor sin cabeza ni cáscara</td>
+                </tr>
+                <tr>
+                  <td>Sopas y caldos</td>
+                  <td><span class="badge-category">4 a 6 meses</span></td>
+                  <td>Dejar espacio de dilatación en el frasco</td>
+                </tr>
+                <tr>
+                  <td>Guisos con carne</td>
+                  <td><span class="badge-category">2 a 3 meses</span></td>
+                  <td>Consistencia cambia ligeramente</td>
+                </tr>
+                <tr>
+                  <td>Guisos de vegetales</td>
+                  <td><span class="badge-category">3 a 4 meses</span></td>
+                  <td>Cocinar bien para evitar exceso de agua</td>
+                </tr>
+                <tr>
+                  <td>Vegetales blanqueados</td>
+                  <td><span class="badge-category">8 a 12 meses</span></td>
+                  <td>El blanqueado inactiva enzimas</td>
+                </tr>
+                <tr>
+                  <td>Frutas</td>
+                  <td><span class="badge-category">8 a 12 meses</span></td>
+                  <td>Ideal para batidos o compotas</td>
+                </tr>
+                <tr>
+                  <td>Arroz cocido</td>
+                  <td><span class="badge-category">1 a 2 meses</span></td>
+                  <td>Congelar en porciones individuales planas</td>
+                </tr>
+                <tr>
+                  <td>Pasta cocida</td>
+                  <td><span class="badge-category">1 a 2 meses</span></td>
+                  <td>Dejar al dente antes de congelar</td>
+                </tr>
+                <tr>
+                  <td>Pan y productos horneados</td>
+                  <td><span class="badge-category">3 meses</span></td>
+                  <td>Mantener cerrado para evitar olores</td>
+                </tr>
+                <tr>
+                  <td>Masas crudas</td>
+                  <td><span class="badge-category">1 a 3 meses</span></td>
+                  <td>Depende del tipo de grasa que lleven</td>
+                </tr>
+                <tr>
+                  <td>Legumbres cocidas</td>
+                  <td><span class="badge-category">6 meses</span></td>
+                  <td>Secar un poco antes de congelar</td>
+                </tr>
+                <tr>
+                  <td>Salsas de tomate</td>
+                  <td><span class="badge-category">3 a 4 meses</span></td>
+                  <td>Excelente para batch cooking</td>
+                </tr>
+                <tr>
+                  <td>Salsas con crema o lácteos</td>
+                  <td><span class="badge-category">1 a 2 meses</span></td>
+                  <td>Puede requerir emulsión al calentar</td>
+                </tr>
+                <tr>
+                  <td>Quesos duros rallados</td>
+                  <td><span class="badge-category">3 a 4 meses</span></td>
+                  <td>Esparcir en bolsa para evitar bloque compacto</td>
+                </tr>
+                <tr>
+                  <td>Comidas preparadas completas</td>
+                  <td><span class="badge-category">2 a 3 meses</span></td>
+                  <td>Etiquetar siempre la fecha exacta</td>
+                </tr>
+                <tr>
+                  <td>Huevos (sin cáscara, batidos)</td>
+                  <td><span class="badge-category">12 meses</span></td>
+                  <td>Agregar una pizca de sal o azúcar</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 5: LOS 10 ERRORES MÁS COMUNES
+             ========================================================================== -->
+        <section id="capitulo5" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 5</span>
+            <h2 class="chapter-title">Los 10 Errores Más Comunes al Descongelar</h2>
+          </header>
+
+          <!-- Error 1 -->
+          <h3>Error 1: Descongelar sobre la mesada a temperatura ambiente</h3>
+          <p>Es el error más peligroso y el más común. La superficie del alimento entra en zona de peligro (más de 4°C) mucho antes de que el centro se descongele. Resultado: contaminación bacteriana en el exterior mientras el interior sigue congelado.</p>
+          <p><strong>La solución:</strong> Nevera, agua fría o microondas. Siempre.</p>
+
+          <!-- Error 2 -->
+          <h3>Error 2: Volver a congelar sin cocinar</h3>
+          <p>Un alimento descongelado en agua corriente o microondas ya comenzó su ciclo de proliferación bacteriana. Volverlo a congelar en ese estado puede concentrar bacterias y toxinas.</p>
+          <p><strong>La regla:</strong> Si descongelaste en nevera, puedes volver a congelar. Si descongelaste por otro método, cocina primero.</p>
+
+          <!-- Error 3 -->
+          <h3>Error 3: Usar agua caliente para acelerar la descongelación</h3>
+          <p>El agua caliente descongela el exterior rápidamente mientras el interior sigue a -18°C. La capa exterior entra en zona de peligro. Además, la temperatura alta empieza a cocinar la superficie de algunos alimentos.</p>
+          <p><strong>La solución:</strong> Siempre agua fría. La diferencia de tiempo no vale el riesgo.</p>
+
+          <!-- Error 4 -->
+          <h3>Error 4: Descongelar con el envase abierto</h3>
+          <p>El aire y los olores de la nevera o del entorno contaminan el alimento durante la descongelación. La humedad que pierde crea resequedad en la superficie.</p>
+          <p><strong>La solución:</strong> Mantén el alimento en su envase hermético durante todo el proceso de descongelación.</p>
+
+          <!-- Error 5 -->
+          <h3>Error 5: No revisar la temperatura interna antes de comer</h3>
+          <p>Especialmente crítico con carnes y aves. Un alimento puede verse completamente descongelado por fuera y tener el centro todavía frío o parcialmente congelado.</p>
+          <p><strong>La solución:</strong> Para carnes y aves, presiona con el dedo en la parte más gruesa. Debe ceder completamente. Si tienes termómetro de cocina, el centro debe marcar al menos 4°C antes de cocinar.</p>
+
+          <!-- Error 6 -->
+          <h3>Error 6: Dejar el alimento descongelado más de 2 días en la nevera sin cocinar</h3>
+          <p>Una vez descongelado, el reloj sigue corriendo. La nevera frena las bacterias pero no las detiene.</p>
+          <p><strong>Tiempos máximos en nevera después de descongelar:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Carne molida y mariscos: cocinar el mismo día</li>
+            <li>Pollo y pescado: máximo 1-2 días</li>
+            <li>Carnes rojas en cortes: máximo 3-5 días</li>
+            <li>Sopas y guisos: máximo 3-4 días</li>
+          </ul>
+
+          <!-- Error 7 -->
+          <h3>Error 7: Microondas a potencia completa para descongelar</h3>
+          <p>La potencia alta cocina en lugar de descongelar. Los bordes y partes delgadas se cocinan mientras el centro sigue congelado.</p>
+          <p><strong>La solución:</strong> Siempre la función "descongelar" o potencia del 30%. Pausar cada 2-3 minutos para revisar.</p>
+
+          <!-- Error 8 -->
+          <h3>Error 8: No escurrir los vegetales descongelados</h3>
+          <p>Los vegetales liberan agua al descongelarse. Si los agregas a una preparación sin escurrirlos, ese exceso de líquido diluye sabores, evita el dorado y puede arruinar texturas.</p>
+          <p><strong>La solución:</strong> Si los descongelaste previamente (para ensaladas o rellenos), escúrrelos bien sobre papel absorbente o en colador antes de usar.</p>
+
+          <!-- Error 9 -->
+          <h3>Error 9: Confiar en el olor para evaluar seguridad</h3>
+          <p>Muchas bacterias peligrosas (Salmonella, E. coli, Listeria) no producen mal olor. Un alimento puede oler completamente normal y estar contaminado a niveles peligrosos.</p>
+          <p><strong>La solución:</strong> Sigue los tiempos y métodos. No dependas del olfato como única medida de seguridad.</p>
+
+          <!-- Error 10 -->
+          <h3>Error 10: Descongelar en el auto o en lugares con temperatura variable</h3>
+          <p>Algunas personas dejan alimentos descongelándose en el carro mientras hacen diligencias. Las temperaturas pueden subir peligrosamente rápido dentro de un vehículo.</p>
+          <p><strong>La solución:</strong> Lleva los alimentos congelados en bolsa térmica y descongélalos en casa de forma controlada.</p>
+          
+          <!-- Static representation of checklist for PRINT only -->
+          <div class="print-checklist-static" style="display:none;">
+            <div class="print-checklist-title">Checklist de Auto-Evaluación de Errores Comunes</div>
+            <p>Marca con honestidad cuáles de estos errores cometes para hacer un auto-seguimiento en tu cocina:</p>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>1. Descongelar sobre la mesada a temperatura ambiente</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>2. Volver a congelar alimentos sin haberlos cocinado previamente</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>3. Usar agua caliente para acelerar el proceso</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>4. Descongelar con el envase abierto expuesto al aire de la nevera</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>5. No revisar la textura o temperatura interna de carnes y aves</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>6. Dejar los alimentos descongelados más de 2 días en la nevera</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>7. Descongelar en microondas a potencia alta</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>8. No escurrir el exceso de agua en los vegetales descongelados</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>9. Confiar únicamente en el olfato para saber si el alimento es seguro</span></div>
+            <div class="print-checklist-item"><div class="print-checklist-box"></div> <span>10. Dejar descongelar alimentos en el auto o ambientes inestables</span></div>
+          </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 6: TEXTURA Y SABOR
+             ========================================================================== -->
+        <section id="capitulo6" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 6</span>
+            <h2 class="chapter-title">Cómo Recuperar la Textura y el Sabor Después de Descongelar</h2>
+          </header>
+
+          <h3>El problema de la textura</h3>
+          <p>Algunos alimentos cambian de textura después de congelar y descongelar. Esto es normal y tiene solución. La clave es saber qué esperar y cómo compensarlo.</p>
+          
+          <p><strong>Carnes que quedaron secas:</strong></p>
+          <p>Marinarlas 30-60 minutos después de descongelar y antes de cocinar. Una marinada ácida (con limón, vinagre o yogur) ayuda a rehidratar las fibras musculares. También funciona cocinar en líquido (estofado, salsa) en lugar de a la parrilla.</p>
+          
+          <p><strong>Vegetales que quedaron blandos:</strong></p>
+          <p>Los vegetales que pierden textura después de congelar son ideales para purés, sopas, salteados con mucho calor o rellenos. No intentes usarlos en ensaladas donde la textura crujiente sea importante — simplemente no la van a tener.</p>
+          
+          <p><strong>Salsas que se cortaron o separaron:</strong></p>
+          <p>Calentar a fuego muy bajo revolviendo constantemente con batidor de mano. En la mayoría de los casos la emulsión se recupera con el calor. Si no, agregar una cucharadita de almidón de maíz disuelto en agua fría y continuar revolviendo.</p>
+          
+          <p><strong>Pan que quedó seco:</strong></p>
+          <p>Humedecer ligeramente la superficie con agua y calentar en horno a 180°C por 5-8 minutos. El vapor interno rehidrata la miga mientras la corteza se vuelve crujiente de nuevo.</p>
+          
+          <p><strong>Arroz que quedó grumoso:</strong></p>
+          <p>Siempre recalentar con agua o caldo (1-2 cucharadas por taza). El líquido rehidrata los granos y los separa. El microondas con agua funciona muy bien para esto.</p>
+
+          <h3>Técnicas de rehidratación según el alimento</h3>
+          
+          <p><strong>Para carnes y aves resecas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Marinar en aceite de oliva + hierbas + ácido (limón/vinagre) por 30 minutos antes de cocinar.</li>
+            <li>Cocinar en salsa o caldo en lugar de seco.</li>
+            <li>Usar técnica de sous vide improvisada: bolsa hermética en agua caliente (no hirviendo) por 15-20 minutos.</li>
+          </ul>
+
+          <p><strong>Para panes y masas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Nebulizar ligeramente con agua antes del horno.</li>
+            <li>Envolver en paño húmedo y calentar en microondas 20-30 segundos.</li>
+            <li>Pasar por sartén con mantequilla o aceite.</li>
+          </ul>
+
+          <p><strong>Para pastas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Siempre recalentar directo en la salsa con un poco de líquido.</li>
+            <li>Nunca recalentar en agua hirviendo — se sobre-hidrata y queda pastosa.</li>
+          </ul>
+
+          <p><strong>Para frutas:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Las frutas descongeladas pierden textura permanentemente.</li>
+            <li>Usar en smoothies, compotas, rellenos de pasteles, mermeladas.</li>
+            <li>Para decoración, usa frutas frescas.</li>
+          </ul>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CAPÍTULO 7: SEÑALES DE ALERTA
+             ========================================================================== -->
+        <section id="capitulo7" class="chapter-section">
+          <header class="chapter-header">
+            <span class="chapter-number">Capítulo 7</span>
+            <h2 class="chapter-title">Señales de Alerta — Cuándo Desechar</h2>
+          </header>
+
+          <p>Aunque el objetivo de esta guía es ayudarte a aprovechar al máximo tu sistema de congelación, hay momentos en que lo correcto es desechar. Aprende a reconocerlos.</p>
+
+          <h3>Señales visuales de alarma</h3>
+          
+          <p><strong>Quemadura de congelación severa:</strong></p>
+          <p>Manchas blancas o grises secas en la superficie del alimento. Si es superficial, puedes recortarla y usar el resto. Si cubre más del 30% del alimento o está profunda, el sabor y la textura estarán muy comprometidos.</p>
+          
+          <p><strong>Cristales de hielo dentro del envase (escarcha excesiva):</strong></p>
+          <p>Indica que el alimento fue descongelado y vuelto a congelar en algún momento (posiblemente por un corte de luz o apertura excesiva del congelador). Si hay mucha escarcha, el alimento pudo haber pasado tiempo en zona de peligro.</p>
+          
+          <p><strong>Cambio de color inusual:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+            <li>Carne que pasó de roja/rosada a marrón oscuro o grís verdoso.</li>
+            <li>Pollo con tonos verdosos o morados.</li>
+            <li>Pescado con color amarillento o verdoso.</li>
+            <li>Vegetales con manchas negras o marrones que no eran naturales.</li>
+          </ul>
+
+          <p><strong>Textura viscosa o babosa:</strong></p>
+          <p>En carnes y pescados, una superficie viscosa después de descongelar es señal clara de descomposición. Desechar inmediatamente.</p>
+
+          <h3>Señales olfativas</h3>
+          <p>El olor agrio, rancio, a amoniaco (especialmente en pescados y mariscos), fermentado o simplemente "raro" y difícil de describir son señales para desechar. Cuando tienes duda, tira el alimento. El costo de un alimento es siempre menor al costo de una intoxicación.</p>
+
+          <div class="callout callout-error">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-content">
+              <div class="callout-title">La regla del "más vale prevenir"</div>
+              <p>Si no recuerdas cuándo congelaste algo, si el etiquetado se borró, si estuvo en la zona de temperatura peligrosa por tiempo desconocido, o si simplemente tienes duda: descártalo. El riesgo nunca vale la pena.</p>
+            </div>
+          </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
+             CONCLUSIÓN
+             ========================================================================== -->
+        <section id="conclusion" class="conclusion-box">
+          <header>
+            <h2 style="font-family: var(--font-title); font-size: 1.75rem; margin-bottom: 0.5rem;">Conclusión: El Sistema Completo</h2>
+          </header>
+          
+          <p>Dominar la descongelación cierra el ciclo del sistema de congelación. No es suficiente congelar correctamente si luego arruinas el resultado en la descongelación.</p>
+          
+          <p><strong>El resumen ejecutivo que debes tener presente:</strong></p>
+          <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><strong>Planificado (24+ horas de anticipación):</strong> Nevera. Siempre.</li>
+            <li><strong>Rápido (1-2 horas):</strong> Agua fría corriente, alimento en bolsa hermética.</li>
+            <li><strong>Urgencia extrema:</strong> Microondas en función descongelar, cocinar inmediatamente.</li>
+            <li><strong>Vegetales, sopas, legumbres, arroces:</strong> Cocción directa desde congelado, sin descongelar.</li>
+            <li><strong>Nunca:</strong> Mesada a temperatura ambiente, agua caliente, volver a congelar sin cocinar después de descongelación rápida.</li>
+          </ul>
+
+          <p>Con esta guía tienes todo lo que necesitas para que cada comida que sacas de tu congelador llegue a la mesa con el mismo sabor, textura y valor nutricional con el que fue preparada.</p>
+          
+          <div style="border-top: 1px solid var(--border-color); padding-top: 1.5rem; margin-top: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--text-muted);">
+            <p style="margin-bottom: 0.25rem; font-style: italic;"><strong>Guía Maestra de Descongelación y Rehidratación</strong></p>
+            <p style="margin-bottom: 0;">Complemento del sistema de recetas saludables para congelar</p>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  </div> <!-- End of mainAppLayout -->
+
+  <!-- PRINT HEADERS AND FOOTERS -->
+  <div class="print-header">Guía Maestra de Descongelación y Rehidratación</div>
+  <div class="print-footer">Página <span class="page-number"></span> | Recetas Saludables para Congelar</div>
+
+  <!-- ==========================================================================
+       8. JAVASCRIPT LOGIC
+       ========================================================================== -->
+  <script>
+    /* ==========================================================================
+       DATOS ESTRUCTURADOS DE ALIMENTOS
+       ========================================================================== */
+    const FOOD_DATABASE = [
+      {
+        name: "Pechuga de pollo (individual)",
+        category: "aves",
+        categoryDisplay: "Aves",
+        fridge_time: "12 a 18 horas",
+        fridge_hours: 15,
+        water_time: "1 a 2 horas",
+        water_hours: 1.5,
+        microwave: "Sí (función descongelar)",
+        direct_cook: "No (se quema por fuera)",
+        max_freeze: "9 meses",
+        tips: "No lavar bajo el grifo. Secar muy bien con papel antes de cocinar."
+      },
+      {
+        name: "Muslos y contramuslos de pollo",
+        category: "aves",
+        categoryDisplay: "Aves",
+        fridge_time: "18 a 24 horas",
+        fridge_hours: 21,
+        water_time: "2 a 3 horas",
+        water_hours: 2.5,
+        microwave: "Sí (función descongelar)",
+        direct_cook: "No",
+        max_freeze: "9 meses",
+        tips: "Colocar en bandeja honda en nevera por goteos de condensación."
+      },
+      {
+        name: "Pollo entero pequeño (1-1.5 kg)",
+        category: "aves",
+        categoryDisplay: "Aves",
+        fridge_time: "24 horas",
+        fridge_hours: 24,
+        water_time: "3 a 4 horas",
+        water_hours: 3.5,
+        microwave: "No recomendado",
+        direct_cook: "No",
+        max_freeze: "12 meses",
+        tips: "Asegurar que la cavidad interna esté totalmente descongelada antes de asar."
+      },
+      {
+        name: "Pollo entero grande (más de 2 kg)",
+        category: "aves",
+        categoryDisplay: "Aves",
+        fridge_time: "36 a 48 horas",
+        fridge_hours: 42,
+        water_time: "No recomendado",
+        water_hours: null,
+        microwave: "No",
+        direct_cook: "No",
+        max_freeze: "12 meses",
+        tips: "Descongelar estrictamente en nevera por seguridad alimentaria."
+      },
+      {
+        name: "Filetes de res o cerdo (delgados)",
+        category: "carnes",
+        categoryDisplay: "Carnes",
+        fridge_time: "12 a 18 horas",
+        fridge_hours: 15,
+        water_time: "1 a 2 horas",
+        water_hours: 1.5,
+        microwave: "Sí",
+        direct_cook: "No",
+        max_freeze: "6 a 12 meses",
+        tips: "Secar y sellar a fuego alto después de descongelar para una buena textura."
+      },
+      {
+        name: "Chuletas y cortes de cerdo",
+        category: "carnes",
+        categoryDisplay: "Carnes",
+        fridge_time: "18 a 24 horas",
+        fridge_hours: 21,
+        water_time: "2 a 3 horas",
+        water_hours: 2.5,
+        microwave: "Sí",
+        direct_cook: "No",
+        max_freeze: "4 a 6 meses",
+        tips: "Dejar reposar 5 minutos a temperatura ambiente tras la cocción."
+      },
+      {
+        name: "Piezas grandes o asados de carne",
+        category: "carnes",
+        categoryDisplay: "Carnes",
+        fridge_time: "24 a 48 horas (por cada 1.5 kg)",
+        fridge_hours: 36,
+        water_time: "No recomendado",
+        water_hours: null,
+        microwave: "No",
+        direct_cook: "No",
+        max_freeze: "6 a 12 meses",
+        tips: "Usar termómetro. El centro debe estar a más de 4°C antes de iniciar cocción."
+      },
+      {
+        name: "Carne molida de res o cerdo",
+        category: "carnes",
+        categoryDisplay: "Carnes",
+        fridge_time: "12 a 24 horas",
+        fridge_hours: 18,
+        water_time: "1 a 2 horas",
+        water_hours: 1.5,
+        microwave: "Sí (revisando constantemente)",
+        direct_cook: "No",
+        max_freeze: "3 a 4 meses",
+        tips: "Cocinar el mismo día de la descongelación obligatoriamente."
+      },
+      {
+        name: "Filetes de pescado blanco",
+        category: "pescados",
+        categoryDisplay: "Pescados y Mariscos",
+        fridge_time: "8 a 12 horas",
+        fridge_hours: 10,
+        water_time: "30 a 60 minutos",
+        water_hours: 0.75,
+        microwave: "Sí",
+        direct_cook: "No recomendado",
+        max_freeze: "6 meses",
+        tips: "Secar bien con papel absorbente para evitar que se desmorone al sartén."
+      },
+      {
+        name: "Filetes de pescado graso (Salmón)",
+        category: "pescados",
+        categoryDisplay: "Pescados y Mariscos",
+        fridge_time: "12 a 18 horas",
+        fridge_hours: 15,
+        water_time: "1 hora",
+        water_hours: 1,
+        microwave: "Sí",
+        direct_cook: "No recomendado",
+        max_freeze: "2 a 3 meses",
+        tips: "Los pescados grasos tienen un tiempo menor de congelador por oxidación."
+      },
+      {
+        name: "Camarones y langostinos",
+        category: "pescados",
+        categoryDisplay: "Pescados y Mariscos",
+        fridge_time: "6 a 10 horas",
+        fridge_hours: 8,
+        water_time: "15 a 30 minutos",
+        water_hours: 0.35,
+        microwave: "Sí",
+        direct_cook: "Sí (directo al sartén)",
+        max_freeze: "3 a 6 meses",
+        tips: "Bajo chorro de agua fría en colador se descongela en minutos."
+      },
+      {
+        name: "Vegetales congelados blanqueados",
+        category: "vegetales",
+        categoryDisplay: "Vegetales",
+        fridge_time: "4 a 8 horas",
+        fridge_hours: 6,
+        water_time: "15 a 30 minutos",
+        water_hours: 0.35,
+        microwave: "No (quedan muy blandos)",
+        direct_cook: "Sí (Método Preferido)",
+        max_freeze: "8 a 12 meses",
+        tips: "Agregar directamente congelados a ollas, sartenes o cocción al vapor."
+      },
+      {
+        name: "Sopas, caldos y guisos",
+        category: "otros",
+        categoryDisplay: "Otros",
+        fridge_time: "8 a 12 horas",
+        fridge_hours: 10,
+        water_time: "30 a 45 minutos (en bolsa)",
+        water_hours: 0.6,
+        microwave: "Sí",
+        direct_cook: "Sí (a fuego lento en olla)",
+        max_freeze: "4 a 6 meses",
+        tips: "Remover vigorosamente al calentar para emulsionar ingredientes separados."
+      },
+      {
+        name: "Arroz y pastas cocidas",
+        category: "otros",
+        categoryDisplay: "Otros",
+        fridge_time: "No requerido",
+        fridge_hours: null,
+        water_time: "No recomendado",
+        water_hours: null,
+        microwave: "Sí (con 2 cdas de agua)",
+        direct_cook: "Sí (sartén tapado con vapor)",
+        max_freeze: "1 a 2 meses",
+        tips: "Agregar 2 cucharadas de agua para que el vapor rehidrate los granos."
+      },
+      {
+        name: "Pan y repostería",
+        category: "otros",
+        categoryDisplay: "Otros",
+        fridge_time: "6 a 10 horas",
+        fridge_hours: 8,
+        water_time: "No",
+        water_hours: null,
+        microwave: "Sí (en paño húmedo)",
+        direct_cook: "Sí (tostadora directa)",
+        max_freeze: "3 meses",
+        tips: "Humedecer la superficie ligeramente antes de hornear a 180°C para recuperar corteza."
+      },
+      {
+        name: "Legumbres cocidas (Frijoles)",
+        category: "otros",
+        categoryDisplay: "Otros",
+        fridge_time: "4 a 6 horas (para ensalada)",
+        fridge_hours: 5,
+        water_time: "10 a 15 minutos",
+        water_hours: 0.2,
+        microwave: "Sí",
+        direct_cook: "Sí (directo a la olla)",
+        max_freeze: "6 meses",
+        tips: "Ideal para añadir directamente congeladas a sopas y guisos."
+      }
+    ];
+
+    /* ==========================================================================
+       CHECKLIST DE ERRORES COMUNES (CONFIGURACIÓN)
+       ========================================================================== */
+    const ERRORS_LIST = [
+      {
+        title: "Descongelar sobre la mesada a temperatura ambiente",
+        solution: "⚠️ ¡Riesgo alto! La superficie entra en zona de peligro (más de 4°C) rápidamente. Pásalo a la nevera la noche anterior o usa el chorro de agua fría."
+      },
+      {
+        title: "Volver a congelar alimentos crudos ya descongelados",
+        solution: "⚠️ ¡Riesgo microbiológico! Si descongelaste con agua o microondas, debes cocinar completamente el alimento a altas temperaturas antes de volver a congelar."
+      },
+      {
+        title: "Usar agua caliente para acelerar el proceso",
+        solution: "⚠️ El agua caliente cocina los bordes y crea una incubadora bacteriana perfecta en el exterior. Usa agua fría y cámbiala cada 30 minutos."
+      },
+      {
+        title: "Descongelar con el envase abierto en la nevera",
+        solution: "⚠️ El alimento se reseca y absorbe contaminación cruzada u olores del refrigerador. Mantén el empaque hermético sellado."
+      },
+      {
+        title: "No revisar la temperatura o textura en el interior",
+        solution: "⚠️ Podría estar congelado en el centro, cocinándose de manera desigual e insegura. Presiona el centro con el dedo para verificar flexibilidad."
+      },
+      {
+        title: "Dejar el alimento descongelado más de 2 días sin cocinar",
+        solution: "⚠️ Las bacterias de la nevera continúan multiplicándose lentamente. Consume carne molida el mismo día; pollo y pescado en 1-2 días."
+      },
+      {
+        title: "Descongelar en microondas a potencia máxima",
+        solution: "⚠️ Cocinará partes del alimento antes de descongelarlo completo. Usa la función 'defrost' o potencia al 30% y haz pausas cada 2 minutos."
+      },
+      {
+        title: "No escurrir bien los vegetales descongelados",
+        solution: "⚠️ El exceso de agua diluye sabores y arruina la cocción o la consistencia de las masas. Escúrrelos sobre colador o papel absorbente."
+      },
+      {
+        title: "Confiar en el olfato como único método de seguridad",
+        solution: "⚠️ La Salmonella y la Listeria no tienen olor ni sabor detectable. Sigue rigurosamente las pautas de tiempo y temperatura."
+      },
+      {
+        title: "Dejar alimentos descongelándose en el auto",
+        solution: "⚠️ El calor acumulado eleva la temperatura rápidamente al rango peligroso. Transporta siempre con una bolsa térmica."
+      }
+    ];
+
+    /* ==========================================================================
+       INICIALIZACIÓN Y EVENT LISTENERS
+       ========================================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+      // Verificar acceso
+      checkAuth();
+
+      // Cargar buscador inicial
+      filterFoods();
+      
+      // Llenar select de la calculadora
+      populateCalculatorSelect();
+      
+      // Llenar checklist de errores
+      buildChecklist();
+      
+      // Configurar barra de progreso
+      window.addEventListener("scroll", updateProgressBar);
+      
+      // Intersection Observer para active TOC
+      setupTOCScrollSpy();
+      
+      // Configurar menú móvil
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebar = document.getElementById("sidebar");
+      
+      menuToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("mobile-open");
+      });
+      
+      // Cerrar menú móvil al hacer click en un item
+      document.querySelectorAll(".toc-item a").forEach(link => {
+        link.addEventListener("click", () => {
+          sidebar.classList.remove("mobile-open");
+        });
+      });
+    });
+
+    /* ==========================================================================
+       SISTEMA DE PESTAÑAS (TABS)
+       ========================================================================== */
+    function switchTab(event, tabId) {
+      // Desactivar todos los botones de tab
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      tabBtns.forEach(btn => btn.classList.remove("active"));
+      
+      // Ocultar todos los contenidos
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabContents.forEach(content => content.classList.remove("active"));
+      
+      // Activar el tab actual
+      event.currentTarget.classList.add("active");
+      document.getElementById(tabId).classList.add("active");
+    }
+
+    /* ==========================================================================
+       FUNCIONALIDAD 1: BUSCADOR
+       ========================================================================== */
+    let currentCategoryFilter = "todos";
+
+    function filterCategory(event, category) {
+      // Cambiar chip activo
+      const chips = document.querySelectorAll(".filter-chip");
+      chips.forEach(chip => chip.classList.remove("active"));
+      event.currentTarget.classList.add("active");
+      
+      currentCategoryFilter = category;
+      filterFoods();
+    }
+
+    function filterFoods() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const resultsContainer = document.getElementById("searchResults");
+      resultsContainer.innerHTML = "";
+      
+      const filtered = FOOD_DATABASE.filter(food => {
+        const matchesQuery = food.name.toLowerCase().includes(query);
+        const matchesCategory = currentCategoryFilter === "todos" || food.category === currentCategoryFilter;
+        return matchesQuery && matchesCategory;
+      });
+
+      if (filtered.length === 0) {
+        resultsContainer.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">
+          No se encontraron alimentos que coincidan con tu búsqueda.
+        </div>`;
+        return;
+      }
+
+      filtered.forEach(food => {
+        const card = document.createElement("div");
+        card.className = "food-card";
+        
+        card.innerHTML = `
+          <div>
+            <div class="food-header">
+              <span class="food-name">${food.name}</span>
+              <span class="food-category">${food.categoryDisplay}</span>
+            </div>
+            <div class="food-details">
+              <div class="food-detail-item">
+                <span class="food-detail-label">Nevera:</span>
+                <span class="food-detail-val">${food.fridge_time}</span>
+              </div>
+              <div class="food-detail-item">
+                <span class="food-detail-label">Agua fría:</span>
+                <span class="food-detail-val">${food.water_time}</span>
+              </div>
+              <div class="food-detail-item">
+                <span class="food-detail-label">Microondas:</span>
+                <span class="food-detail-val">${food.microwave}</span>
+              </div>
+              <div class="food-detail-item">
+                <span class="food-detail-label">Cocinar directo:</span>
+                <span class="food-detail-val">${food.direct_cook}</span>
+              </div>
+              <div class="food-detail-item" style="border: none;">
+                <span class="food-detail-label">Congelador (Máx):</span>
+                <span class="food-detail-val" style="color: var(--accent-color); font-weight:700;">${food.max_freeze}</span>
+              </div>
+            </div>
+          </div>
+          <div class="food-tip">
+            <strong>Pro Tip:</strong> ${food.tips}
+          </div>
+        `;
+        resultsContainer.appendChild(card);
+      });
+    }
+
+    /* ==========================================================================
+       FUNCIONALIDAD 2: CALCULADORA
+       ========================================================================== */
+    function populateCalculatorSelect() {
+      const select = document.getElementById("calcFoodSelect");
+      select.innerHTML = "";
+      
+      // Filtrar alimentos que tengan tiempos numéricos configurados
+      FOOD_DATABASE.forEach((food, index) => {
+        const option = document.createElement("option");
+        option.value = index;
+        option.textContent = food.name;
+        select.appendChild(option);
+      });
+      
+      // Establecer hora actual por defecto en el input
+      const now = new Date();
+      const hours = String(now.getHours()).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      document.getElementById("calcStartTime").value = `${hours}:${minutes}`;
+      
+      calculateDefrostTime();
+    }
+
+    function calculateDefrostTime() {
+      const foodIndex = document.getElementById("calcFoodSelect").value;
+      const method = document.getElementById("calcMethodSelect").value;
+      const startTimeVal = document.getElementById("calcStartTime").value;
+      
+      const food = FOOD_DATABASE[foodIndex];
+      const resultTime = document.getElementById("calcResultTime");
+      const resultDuration = document.getElementById("calcResultDuration");
+      const progressBar = document.getElementById("calcProgressBar");
+      const alertBox = document.getElementById("calcAlertBox");
+      
+      if (!startTimeVal) {
+        resultTime.textContent = "--:--";
+        resultDuration.textContent = "Duración estimada: --";
+        return;
+      }
+      
+      // Determinar la duración en horas
+      let hoursNeeded = 0;
+      if (method === "fridge") {
+        hoursNeeded = food.fridge_hours;
+      } else {
+        hoursNeeded = food.water_hours;
+      }
+      
+      if (hoursNeeded === null) {
+        resultTime.textContent = "No recomendado";
+        resultDuration.textContent = "Método no seguro para este alimento";
+        progressBar.style.width = "0%";
+        alertBox.innerHTML = `⚠️ <strong>Peligro:</strong> Este método no es seguro o no se recomienda para este tipo de corte/alimento (piezas muy grandes).`;
+        alertBox.className = "calc-alert";
+        alertBox.style.backgroundColor = "var(--danger-light)";
+        alertBox.style.borderColor = "var(--danger-color)";
+        return;
+      }
+      
+      // Calcular hora final
+      const [startHours, startMinutes] = startTimeVal.split(":").map(Number);
+      const startDate = new Date();
+      startDate.setHours(startHours);
+      startDate.setMinutes(startMinutes);
+      
+      const totalMinutesNeeded = Math.round(hoursNeeded * 60);
+      const endDate = new Date(startDate.getTime() + totalMinutesNeeded * 60000);
+      
+      const endHours = String(endDate.getHours()).padStart(2, '0');
+      const endMinutes = String(endDate.getMinutes()).padStart(2, '0');
+      
+      // Mostrar info
+      resultTime.textContent = `${endHours}:${endMinutes}`;
+      
+      // Formato legible de duración
+      const fullHours = Math.floor(hoursNeeded);
+      const remainingMinutes = Math.round((hoursNeeded - fullHours) * 60);
+      let durationString = "";
+      if (fullHours > 0) durationString += `${fullHours}h `;
+      if (remainingMinutes > 0) durationString += `${remainingMinutes}min`;
+      resultDuration.textContent = `Duración estimada: ${durationString}`;
+      
+      // Modificar alertas y progresos según método
+      if (method === "fridge") {
+        progressBar.style.width = "100%";
+        progressBar.style.backgroundColor = "var(--primary-color)";
+        alertBox.innerHTML = `✅ <strong>Seguro:</strong> Método ultra seguro. Preserva nutrientes y jugosidad al máximo. Una vez descongelado, puede permanecer en nevera 1-2 días.`;
+        alertBox.style.backgroundColor = "var(--primary-light)";
+        alertBox.style.borderColor = "var(--primary-color)";
+      } else {
+        progressBar.style.width = "100%";
+        progressBar.style.backgroundColor = "var(--accent-color)";
+        alertBox.innerHTML = `⚠️ <strong>Atención:</strong> Debes cocinar este alimento inmediatamente después de que finalice la descongelación. No lo vuelvas a meter al congelador crudo.`;
+        alertBox.style.backgroundColor = "var(--warning-light)";
+        alertBox.style.borderColor = "var(--warning-color)";
+      }
+    }
+
+    /* ==========================================================================
+       FUNCIONALIDAD 3: CHECKLIST DE ERRORES
+       ========================================================================= */
+    function buildChecklist() {
+      const container = document.getElementById("checklistItems");
+      container.innerHTML = "";
+      
+      ERRORS_LIST.forEach((error, index) => {
+        const item = document.createElement("div");
+        item.className = "checklist-item";
+        item.id = `err-item-${index}`;
+        
+        item.innerHTML = `
+          <label class="checklist-item-row" onclick="toggleChecklistError(${index})">
+            <input type="checkbox" class="checklist-checkbox" id="err-check-${index}">
+            <span class="checklist-text">${error.title}</span>
+          </label>
+          <div class="checklist-solution" id="err-sol-${index}">
+            ${error.solution}
+          </div>
+        `;
+        container.appendChild(item);
+      });
+      
+      updateChecklistScore();
+    }
+
+    function toggleChecklistError(index) {
+      const item = document.getElementById(`err-item-${index}`);
+      const checkbox = document.getElementById(`err-check-${index}`);
+      
+      if (checkbox.checked) {
+        item.classList.add("checked");
+      } else {
+        item.classList.remove("checked");
+      }
+      
+      updateChecklistScore();
+    }
+
+    function updateChecklistScore() {
+      const checkboxes = document.querySelectorAll(".checklist-checkbox");
+      let checkedCount = 0;
+      checkboxes.forEach(box => {
+        if (box.checked) checkedCount++;
+      });
+      
+      const score = 100 - (checkedCount * 10);
+      const scoreBadge = document.getElementById("scoreBadge");
+      const bar = document.getElementById("checklistBar");
+      
+      bar.style.width = `${score}%`;
+      scoreBadge.textContent = `${score}%`;
+      
+      if (score >= 80) {
+        scoreBadge.className = "score-badge score-green";
+        scoreBadge.textContent += " (Segura)";
+        bar.style.backgroundColor = "var(--primary-color)";
+      } else if (score >= 50) {
+        scoreBadge.className = "score-badge score-yellow";
+        scoreBadge.textContent += " (Cuidado)";
+        bar.style.backgroundColor = "var(--warning-color)";
+      } else {
+        scoreBadge.className = "score-badge score-red";
+        scoreBadge.textContent += " (Riesgo Alto)";
+        bar.style.backgroundColor = "var(--danger-color)";
+      }
+    }
+
+    /* ==========================================================================
+       SCROLL INDICATORS & PROGRESS
+       ========================================================================== */
+    function updateProgressBar() {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById("pageProgressBar").style.width = scrolled + "%";
+    }
+
+    function setupTOCScrollSpy() {
+      const sections = document.querySelectorAll("article, section.chapter-section, header.cover-page, section.conclusion-box");
+      const tocItems = document.querySelectorAll(".toc-item");
+
+      const options = {
+        root: null,
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            
+            tocItems.forEach(item => {
+              item.classList.remove("active");
+              const link = item.querySelector("a");
+              if (link.getAttribute("href") === `#${id}`) {
+                item.classList.add("active");
+              }
+            });
+          }
+        });
+      }, options);
+
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    }
+
+    /* ==========================================================================
+       LOGIN SYSTEM LOGIC
+       ========================================================================== */
+    function checkAuth() {
+      const auth = localStorage.getItem('guia_descongelacion_auth');
+      if (auth === 'true') {
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('mainAppLayout').style.display = 'block';
+      } else {
+        document.getElementById('loginScreen').style.display = 'flex';
+        document.getElementById('mainAppLayout').style.display = 'none';
+      }
+    }
+
+    function attemptLogin() {
+      const passwordInput = document.getElementById('passwordInput').value.trim();
+      const errorMsg = document.getElementById('loginErrorMsg');
+      
+      if (passwordInput === 'DESCONGELAR2026') {
+        localStorage.setItem('guia_descongelacion_auth', 'true');
+        checkAuth();
+      } else {
+        errorMsg.textContent = 'Contraseña incorrecta. Revisa tu PDF de Hotmart.';
+        errorMsg.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
