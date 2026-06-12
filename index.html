@@ -1454,6 +1454,7 @@
             <li class="toc-item"><a href="#capitulo5">Cap. 5: 10 Errores</a></li>
             <li class="toc-item"><a href="#capitulo6">Cap. 6: Textura y Sabor</a></li>
             <li class="toc-item"><a href="#capitulo7">Cap. 7: Señales de Alerta</a></li>
+            <li class="toc-item"><a href="#herramientas">Herramientas Digitales</a></li>
             <li class="toc-item"><a href="#conclusion">Conclusión</a></li>
           </ul>
         </nav>
@@ -1475,90 +1476,7 @@
     <main class="content-container">
       <div class="content-wrapper">
         
-        <!-- ==========================================================================
-             HERRAMIENTAS INTERACTIVAS (WEB-ONLY DASHBOARD)
-             ========================================================================== -->
-        <section class="interactive-dashboard no-print">
-          <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">⚙️ Herramientas Digitales Interactivas</h2>
-          
-          <div class="dashboard-tabs">
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-calculadora')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-              Calculadora de Tiempos
-            </button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-checklist')">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
-              Auto-Evaluación
-            </button>
-          </div>
-
-          <!-- TAB 2: CALCULADORA -->
-          <div id="tab-calculadora" class="tab-content active">
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Calcula exactamente a qué hora estará lista tu comida para cocinar según el método seleccionado.</p>
-            
-            <div class="calculator-grid">
-              <div class="calc-inputs">
-                <div class="form-group">
-                  <label for="calcFoodSelect">Selecciona el alimento:</label>
-                  <select id="calcFoodSelect" class="form-control" onchange="calculateDefrostTime()">
-                    <!-- Dropdown populated via JS -->
-                  </select>
-                </div>
-                
-                <div class="form-group">
-                  <label for="calcMethodSelect">Método de descongelación:</label>
-                  <select id="calcMethodSelect" class="form-control" onchange="calculateDefrostTime()">
-                    <option value="fridge">Nevera (Recomendado y Seguro)</option>
-                    <option value="water">Agua Fría Corriente (Rápido)</option>
-                  </select>
-                </div>
-
-                <div class="form-group">
-                  <label for="calcStartTime">Hora de inicio:</label>
-                  <input type="time" id="calcStartTime" class="form-control" onchange="calculateDefrostTime()">
-                </div>
-              </div>
-
-              <div class="calc-result-box">
-                <span class="calc-result-title">Hora Estimada de Finalización</span>
-                <div class="calc-time" id="calcResultTime">--:--</div>
-                
-                <div class="calc-progress-track">
-                  <div class="calc-progress-bar" id="calcProgressBar"></div>
-                </div>
-                
-                <p class="calc-result-duration" id="calcResultDuration">Duración estimada: --</p>
-                <div class="calc-alert" id="calcAlertBox">
-                  Selecciona los parámetros para ver los consejos de seguridad.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- TAB 3: CHECKLIST DE ERRORES -->
-          <div id="tab-checklist" class="tab-content">
-            <div class="checklist-wrapper">
-              <div class="checklist-header">
-                <h3 style="font-family: var(--font-body); font-size: 1.15rem; margin-bottom: 0.5rem;">Evaluador de Riesgo Alimentario</h3>
-                <p style="font-size: 0.9rem; color: var(--text-muted);">Marca con total honestidad cuáles de estos errores cometes habitualmente en tu cocina para ver tu nivel de riesgo.</p>
-              </div>
-
-              <div class="checklist-progress-container">
-                <div class="checklist-progress-text">
-                  <span>Nivel de Seguridad en tu Cocina</span>
-                  <span id="scoreBadge" class="score-badge score-green">100% (Segura)</span>
-                </div>
-                <div class="checklist-track">
-                  <div class="checklist-bar" id="checklistBar"></div>
-                </div>
-              </div>
-
-              <div class="checklist-items" id="checklistItems">
-                <!-- Checkbox items generated by Javascript to keep code clean -->
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         <!-- ==========================================================================
              INTRODUCCIÓN
@@ -1571,6 +1489,15 @@
           <p>Un plato perfectamente preparado y congelado puede arruinarse por completo en el proceso de descongelación si no sabes lo que estás haciendo. Textura gomosa, sabor aguado, pérdida de nutrientes, y en el peor de los casos, un alimento que representa un riesgo real para tu salud.</p>
           <p>Esta guía existe para que eso nunca te pase.</p>
           <p>Aprenderás exactamente cómo descongelar cada tipo de alimento, qué método usar según la situación, cuánto tiempo tienes antes de que algo deje de ser seguro, y los errores que debes evitar a toda costa.</p>
+          
+          <!-- Callout mentioning interactive tools at the end of the guide -->
+          <div class="callout callout-trick no-print" style="margin-top: 2rem;">
+            <div class="callout-icon">⚙️</div>
+            <div class="callout-content">
+              <div class="callout-title">Herramientas Digitales al Final de la Guía</div>
+              <p>Para complementar tu aprendizaje y facilitarte la práctica en el día a día, hemos incluido dos herramientas interactivas al final de esta guía: la <strong>Calculadora de Tiempos de Descongelación</strong> y el <strong>Evaluador de Riesgo Alimentario (Auto-Evaluación)</strong>. Te recomendamos leer la guía completa y luego utilizarlas para planificar y auditar tu cocina.</p>
+            </div>
+          </div>
         </article>
 
         <hr class="section-separator">
@@ -2313,6 +2240,93 @@
         <hr class="section-separator">
 
         <!-- ==========================================================================
+             HERRAMIENTAS INTERACTIVAS (WEB-ONLY DASHBOARD)
+             ========================================================================== -->
+        <section class="interactive-dashboard no-print" id="herramientas">
+          <h2 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">⚙️ Herramientas Digitales Interactivas</h2>
+          
+          <div class="dashboard-tabs">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-calculadora')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              Calculadora de Tiempos
+            </button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-checklist')">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              Auto-Evaluación
+            </button>
+          </div>
+
+          <!-- TAB 2: CALCULADORA -->
+          <div id="tab-calculadora" class="tab-content active">
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">Calcula exactamente a qué hora estará lista tu comida para cocinar según el método seleccionado.</p>
+            
+            <div class="calculator-grid">
+              <div class="calc-inputs">
+                <div class="form-group">
+                  <label for="calcFoodSelect">Selecciona el alimento:</label>
+                  <select id="calcFoodSelect" class="form-control" onchange="calculateDefrostTime()">
+                    <!-- Dropdown populated via JS -->
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="calcMethodSelect">Método de descongelación:</label>
+                  <select id="calcMethodSelect" class="form-control" onchange="calculateDefrostTime()">
+                    <option value="fridge">Nevera (Recomendado y Seguro)</option>
+                    <option value="water">Agua Fría Corriente (Rápido)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="calcStartTime">Hora de inicio:</label>
+                  <input type="time" id="calcStartTime" class="form-control" onchange="calculateDefrostTime()">
+                </div>
+              </div>
+
+              <div class="calc-result-box">
+                <span class="calc-result-title">Hora Estimada de Finalización</span>
+                <div class="calc-time" id="calcResultTime">--:--</div>
+                
+                <div class="calc-progress-track">
+                  <div class="calc-progress-bar" id="calcProgressBar"></div>
+                </div>
+                
+                <p class="calc-result-duration" id="calcResultDuration">Duración estimada: --</p>
+                <div class="calc-alert" id="calcAlertBox">
+                  Selecciona los parámetros para ver los consejos de seguridad.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- TAB 3: CHECKLIST DE ERRORES -->
+          <div id="tab-checklist" class="tab-content">
+            <div class="checklist-wrapper">
+              <div class="checklist-header">
+                <h3 style="font-family: var(--font-body); font-size: 1.15rem; margin-bottom: 0.5rem;">Evaluador de Riesgo Alimentario</h3>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Marca con total honestidad cuáles de estos errores cometes habitualmente en tu cocina para ver tu nivel de riesgo.</p>
+              </div>
+
+              <div class="checklist-progress-container">
+                <div class="checklist-progress-text">
+                  <span>Nivel de Seguridad en tu Cocina</span>
+                  <span id="scoreBadge" class="score-badge score-green">100% (Segura)</span>
+                </div>
+                <div class="checklist-track">
+                  <div class="checklist-bar" id="checklistBar"></div>
+                </div>
+              </div>
+
+              <div class="checklist-items" id="checklistItems">
+                <!-- Checkbox items generated by Javascript to keep code clean -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <hr class="section-separator">
+
+        <!-- ==========================================================================
              CONCLUSIÓN
              ========================================================================== -->
         <section id="conclusion" class="conclusion-box">
@@ -2843,7 +2857,7 @@
     }
 
     function setupTOCScrollSpy() {
-      const sections = document.querySelectorAll("article, section.chapter-section, header.cover-page, section.conclusion-box");
+      const sections = document.querySelectorAll("article, section.chapter-section, header.cover-page, section.conclusion-box, section.interactive-dashboard");
       const tocItems = document.querySelectorAll(".toc-item");
 
       const options = {
